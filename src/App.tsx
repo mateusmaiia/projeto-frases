@@ -1,9 +1,11 @@
+
+
 import logoImg from './assets/logo.png'
 import './App.css'
 
 export function App() {
 
-
+  
 
   return (
     <>
@@ -23,7 +25,7 @@ export function App() {
 
         <button className='button-frase'>Gerar frase</button>
 
-        <h3 className="texto-frase">Alguma frase vai vir aqui</h3>
+        <p className="texto-frase">Alguma frase vai vir aqui</p>
       </div>
     </>
   )
