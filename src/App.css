@@ -45,9 +45,10 @@ body {
   background: #1fa4db;
   border: 0;
   border-radius: 4px;
-  pdding: 8px 16px;
+  padding: 8px 16px;
   color: #fff;
   font-size: 16px;
+  margin-top: 24px;
 }
 
 .texto-frase {
