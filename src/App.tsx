@@ -34,6 +34,20 @@ export function App() {
     }
   ]
 
+  function handleSwitchCategory(index: number){
+    setCategoriaSelecionada(index)
+  }
+
+  function gerarFrase(){
+    /**Gera um numero aleatório com base no tamanho de AllFrases */
+    const numeroAleatorio = Math.floor( Math.random() * allFrases[categoriaSelecionada].frases.length)
+
+    setTextoFrase(`"${allFrases[categoriaSelecionada].frases[numeroAleatorio]}"`)
+  }
+  /**Math.floor() --> gerando número inteiro
+   *Math.random() --> gerar um número aleatório com base em um tamanho
+  */
+
   return (
     <>
       <div className="container">
@@ -47,13 +61,16 @@ export function App() {
 
         <section className='category-area'>
           
-          {allFrases.map((item) => (
+          {allFrases.map((item, index) => (
             <button 
               key={item.id}
               className="category-button"
               style={{ 
-                borderWidth: item.nome === allFrases[categoriaSelecionada].nome ? 2 :0
+                borderWidth: item.nome === allFrases[categoriaSelecionada].nome ? 2 :0,
+                borderColor: "#1fa4db"
               }}
+
+              onClick={() => handleSwitchCategory(index)}
             >
               {item.nome}
             </button>
@@ -61,7 +78,7 @@ export function App() {
           
         </section>
 
-        <button className='button-frase'>Gerar frase</button>
+        <button className='button-frase' onClick={gerarFrase}>Gerar frase</button>
 
         {textoFrase !== '' && (
           <p className="texto-frase">
